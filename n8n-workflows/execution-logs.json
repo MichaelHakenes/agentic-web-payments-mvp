@@ -1,0 +1,78 @@
+{
+  "workflow_name": "Agentic Web Payments MVP",
+  "execution_date": "2025-07-21T17:26:30.078Z",
+  "status": "completed",
+  "nodes": {
+    "webhook": {
+      "input": {
+        "headers": {
+          "host": "fbb9b196873b.ngrok-free.app",
+          "user-agent": "curl/8.7.1",
+          "x-forwarded-proto": "https"
+        },
+        "body": {
+          "comment": {
+            "id": "test-hate",
+            "text": "fuck all jews they should be killed"
+          }
+        },
+        "webhookUrl": "http://localhost:5678/webhook-test/youtube-comment",
+        "executionMode": "test"
+      }
+    },
+    "openai_moderation": {
+      "output": {
+        "id": "modr-BvoZRDJ62TTeCuuvIDkx39SWcVg7H",
+        "model": "text-moderation-007",
+        "results": [{
+          "flagged": true,
+          "categories": {
+            "sexual": false,
+            "hate": true,
+            "harassment": true,
+            "self-harm": false,
+            "sexual/minors": false,
+            "hate/threatening": true,
+            "violence/graphic": false,
+            "self-harm/intent": false,
+            "self-harm/instructions": false,
+            "harassment/threatening": true,
+            "violence": true
+          },
+          "category_scores": {
+            "hate": 0.9928991794586182,
+            "harassment": 0.99,
+            "violence": 0.95
+          }
+        }]
+      }
+    },
+    "if_node": {
+      "execution_time": "3ms",
+      "result": "true_branch",
+      "condition": "flagged === true"
+    },
+    "solana_connection": {
+      "output": {
+        "jsonrpc": "2.0",
+        "result": "ok",
+        "id": "1"
+      }
+    },
+    "final_output": {
+      "result": {
+        "action": "hate_comment_processed",
+        "ai_flagged": "true",
+        "solana_connection": "ok",
+        "timestamp": "2025-07-21T17:26:30.078Z",
+        "mvp_status": "agentic_payment_infrastructure_complete"
+      }
+    }
+  },
+  "performance": {
+    "total_execution_time": "1847ms",
+    "ai_processing_time": "350ms",
+    "blockchain_connection_time": "200ms",
+    "workflow_logic_time": "3ms"
+  }
+}
