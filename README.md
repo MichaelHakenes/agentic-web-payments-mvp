@@ -2,7 +2,7 @@
 
 > **AI agents that can autonomously execute financial transactions with cryptographic security**
 
-PayPal, Stripe, and Visa are building toward agentic commerce, but there's no infrastructure for AI agents to actually control money. This MVP demonstrates the missing piece: secure autonomous payments.
+The transition to an agentic web is happening now, but there's a critical infrastructure gap: AI agents can't autonomously control money. While everyone builds AI-employee wrappers, this MVP tackles the real challenge - unlocking agentic micro-payments with secure cryptographic infrastructure that lets agents make purchases independently.
 
 ---
 
@@ -276,29 +276,10 @@ AUDIT_TRAIL_ENABLED=true
 
 ---
 
-## 🤝 **Integration & Extensions**
+## 🤝 **Looking For**
 
-### **Platform Integration Examples**
-- **Discord Bot:** Process messages through webhook
-- **YouTube API:** Analyze comments automatically  
-- **Twitter/X:** Monitor mentions and replies
-- **Custom APIs:** Any platform can send content for analysis
+- **Platform partners** for real-world implementation
+- **Technical co-founder** with cryptography/security expertise  
+- **Early adopters** ready to test autonomous AI payment systems
 
-### **Extending the System**
-- **Additional AI Providers:** Anthropic, Cohere, local models
-- **Multi-Chain Support:** Ethereum, Polygon, Base
-- **Advanced Workflows:** Complex decision trees and payment rules
-- **Enterprise Features:** Role-based access, advanced reporting
-
----
-
-## 📞 **Contact & Support**
-
-**Technical Questions:** michael.hakenes@protonmail.com
-**Demo Requests:** Available for serious integration discussions
-**Partnership Inquiries:** Open to collaboration on scaling the infrastructure
-
-**Looking for:**
-- Platform partners for real-world implementation
-- Technical co-founder with cryptography/security expertise
-- Early adopters ready to test autonomous AI payment systems
+**Contact:** michael.hakenes@gmail.com
