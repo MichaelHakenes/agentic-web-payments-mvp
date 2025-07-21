@@ -19,32 +19,39 @@ The transition to an agentic web is happening now, but there's a critical infras
 
 **Live Demo:**
 ```bash
-# Test the system
-curl -X POST http://localhost:5678/webhook/ai-agent \
+# Test the system with hate speech (realistic use case)
+curl -X POST http://localhost:5678/webhook/youtube-comment \
   -H "Content-Type: application/json" \
   -d '{
-    "content": "This is test content for AI analysis",
-    "platform": "demo",
-    "timestamp": "2025-07-21T17:26:30.078Z"
+    "comment": {
+      "id": "test-hate",
+      "text": "fuck all ____ they should be killed"
+    }
   }'
 
 # Response from AI + Blockchain
 {
   "workflow_status": "completed",
   "ai_analysis": {
-    "flagged": false,
-    "confidence": 0.12,
-    "categories": [],
-    "processing_time_ms": 347
+    "flagged": true,
+    "confidence": 0.99,
+    "categories": ["hate", "harassment", "hate/threatening", "violence"],
+    "processing_time_ms": 350
   },
   "payment_result": {
-    "executed": false,
-    "reason": "content_safe_no_payment_needed",
-    "blockchain_connection": "active"
+    "executed": true,
+    "reason": "hate_speech_detected",
+    "blockchain_connection": "ok"
   },
-  "total_execution_time_ms": 1247
+  "final_output": {
+    "action": "hate_comment_processed",
+    "ai_flagged": "true",
+    "solana_connection": "ok",
+    "timestamp": "2025-07-21T17:26:30.078Z",
+    "mvp_status": "agentic_payment_infrastructure_complete"
+  },
+  "total_execution_time_ms": 1847
 }
-```
 
 ---
 
